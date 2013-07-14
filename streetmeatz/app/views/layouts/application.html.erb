@@ -4,11 +4,13 @@
   <title>Streetmeatz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
-
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
