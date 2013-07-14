@@ -1,7 +1,0 @@
-project_ideas.text
-
-Models - StreetCart, MenuItem, Review
-
-Basically allows user to input their favorite food carts and their respective locations, to be plotted on Google Maps. Other users can then vote up/down those street carts and then add reviews (which can include photos). Menus, phone numbers, twitter handles (for the fancier street carts) can be uploaded as well.
-
-http://rubygems.org/gems/rails-google-maps
