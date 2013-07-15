@@ -1,5 +1,5 @@
 class Vendor < ActiveRecord::Base
-
+# Inserts relational aspects here
 
   acts_as_gmappable
 
