@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+v = Vendor.new
+v.name = "John's Hot Dog Cart"
+v.address = "Madison Square Park"
+v.save

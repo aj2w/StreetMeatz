@@ -6,3 +6,11 @@ Phone: <%= @vendor.phone %><br>
 Twitter: <%= @vendor.twitter %><br><br>
 
 <%= gmaps4rails(@json) %>
+
+<%= link_to "Vendor Home", vendors_path %><br>
+<%= link_to "Edit Vendor Information", edit_vendor_path %><br>
+
+<form action="/vendors/<%= @vendor.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete Vendor</button>
+</form>

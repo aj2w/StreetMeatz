@@ -1,6 +1,5 @@
 class VendorsController < ApplicationController
 
-
   def index
     @vendors = Vendor.all
     @json = Vendor.all.to_gmaps4rails
@@ -51,5 +50,10 @@ class VendorsController < ApplicationController
     redirect_to "/vendors/#{vendor.id}"
   end
 
+  def destroy
+    vendor = Vendor.find(params[:id])
+    vendor.destroy
+    redirect_to "/vendors"
+  end
 
 end
