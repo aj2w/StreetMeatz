@@ -1,4 +1,4 @@
-Vendor (name, latitude, longitude, hours, phone, twitter)
+Vendor (name, address, latitude, longitude, hours, phone, twitter, gmaps boolean)
 has_and_belongs_to_many menuitems
 has_many reviews
 
