@@ -1,18 +1,17 @@
-Streetcart
+Vendor (name, location, hours, phone, twitter)
 has_and_belongs_to_many menuitems
 has_many reviews
 
 
-
-MenuItem
-has_and_belongs_to_many streetcarts
-
+MenuItem (name, description (maybe) )
+has_and_belongs_to_many vendors
 
 
-Review
-belongs_to streetcart
+
+Review (positive, negative, rating 1-5)
+belongs_to vendor
 
 
-User
+User ()
 
 
