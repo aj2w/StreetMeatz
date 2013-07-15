@@ -1,4 +1,4 @@
-Vendor (name, location, hours, phone, twitter)
+Vendor (name, latitude, longitude, hours, phone, twitter)
 has_and_belongs_to_many menuitems
 has_many reviews
 
@@ -8,7 +8,7 @@ has_and_belongs_to_many vendors
 
 
 
-Review (positive, negative, rating 1-5)
+Review (review_positive, review_negative, rating 1-5)
 belongs_to vendor
 
 
