@@ -4,12 +4,7 @@
 <%= link_to(vendor.name,vendor) %><br>
 <% end %>
 
-<%= form_tag locations_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
-  </p>
-<% end %>
+
 
 <%= gmaps4rails(@json) %>
 

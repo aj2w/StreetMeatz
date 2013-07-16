@@ -1,9 +1,13 @@
 class VendorsController < ApplicationController
 
-
   def index
-    @vendors = Vendor.all
-    @json = Vendor.all.to_gmaps4rails
+    if params[:search].present?
+      @vendors = Vendor.near(params[:search], 5, :order => :distance)
+      # NUMBER IS IN MILES
+    else
+      @vendors = Vendor.all
+    end
+    @json = @vendors.to_gmaps4rails
   end
 
   def show
