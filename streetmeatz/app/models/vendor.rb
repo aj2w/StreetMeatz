@@ -3,8 +3,23 @@ class Vendor < ActiveRecord::Base
   has_many :reviews
 
   acts_as_gmappable :check_process => false
+  @markers = User.all.to_gmaps4rails
 
+  ### For gmaps4rails functionality ###
   def gmaps4rails_address
     address
   end
+
+  def gmaps4rails_infowindow
+    "<p>#{name}</p>
+    <p>#{address}</p>
+    <p>#{twitter}</p>
+    <p>#{hours}</p>
+    <p>#{phone}</p>"
+  end
+
+  def gmaps4rails_title
+   #INSERT SOMETHING HERE
+  end
+
 end

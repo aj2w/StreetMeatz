@@ -9,6 +9,9 @@
 
 <p>put three boxes here: find, review</p>
 
+<%= link_to "Find", vendors_path %>
+<%= link_to "Review", reviews_path %>
+
 <p>Currently showing <%= pluralize(@vendors.count, "vendor") %></p>
 <%= gmaps4rails(@json) %>
 </body>
