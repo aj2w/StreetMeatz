@@ -37,5 +37,4 @@ group :development, :test do
 end
 
 gem 'gmaps4rails'
-
-# gem 'geocoder'
+gem "geocoder", "~> 1.1.8"
