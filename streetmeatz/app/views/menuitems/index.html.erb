@@ -1,5 +1,7 @@
 <h1>Menu Items</h1>
 
 <% @menuitems.each do |menuitem| %>
-  <%= link_to menuitem.name, menuitem %>
-  <% end %>
+  <%= link_to menuitem.name, menuitem %><br>
+  <% end %><br>
+
+<%= link_to "Add New Menu Item", new_menuitem_path %>

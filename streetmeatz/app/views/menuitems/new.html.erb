@@ -2,13 +2,15 @@
 
 <form action="/menuitems" method="post">
   <input type="text" name="name" placeholder="Name"><br><br>
-  <label>Where did you eat this dish?</label>
+  <label>Which of the following vendors serve this dish?</label>
 
   <select name="vendor">
     <% @vendors.each do |vendor| %>
     <option value="<%= vendor.id %>"><%= vendor.name %></option>
     <% end %>
   </select>
+
+
   <button>Add new menu item</button>
 </form>
 
