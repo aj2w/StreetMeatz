@@ -1,0 +1,23 @@
+<h1>Review a vendor!</h1>
+
+<form action="/reviews" method="post">
+  <label>Which vendor are you rating?</label>
+
+  <select name="vendor">
+    <% @vendors.each do |vendor| %>
+    <option value="<%= vendor.id %>"><%= vendor.name %></option>
+    <% end %>
+  </select>
+  <br><br>
+
+  <input type="text" name="text" placeholder="Write your review here!"><br><br>
+
+  <input type="radio" name="rating" value="5">5<br>
+  <input type="radio" name="rating" value="4">4<br>
+  <input type="radio" name="rating" value="3">3<br>
+  <input type="radio" name="rating" value="2">2<br>
+  <input type="radio" name="rating" value="1">1<br>
+
+  <button>Add new menu item</button>
+</form>
+
