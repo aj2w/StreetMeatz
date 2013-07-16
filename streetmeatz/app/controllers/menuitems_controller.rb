@@ -10,19 +10,25 @@ class MenuitemsController < ApplicationController
 
   def new
     @menuitem = Menuitem.new
-    @vendors = Vendor.all
   end
 
+  #  def create
+  #   student = Student.new(params[:student])
+  #   student.save
+  #   redirect_to @student
+  # end
+
   def create
-    menuitem = Menuitem.new
-    menuitem.name = params[:name]
-    menuitem.description = params[:description]
-    menuitem.price = params[:price]
-    menuitem.image = params[:image]
+    menuitem = Menuitem.new(params[:menuitem])
+
+    # menuitem.name = params[:name]
+    # menuitem.description = params[:description]
+    # menuitem.price = params[:price]
+    # menuitem.image = params[:image]
     menuitem.save
 
-    vendor = Vendor.find(params[:vendor])
-    vendor.menuitems << menuitem
+    # vendor = Vendor.find(params[:vendor])
+    # vendor.menuitems << menuitem
     redirect_to('/menuitems')
   end
 
