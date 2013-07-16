@@ -1,10 +1,19 @@
-<h1>Add a new vendor</h1>
+<%= form_for @vendor do |f| %>
+  <%= f.label :name %><br>
+    <%= f.text_field :name, :placeholder => "Vendor name" %><br>
+  <%= f.label :address %><br>
+    <%= f.text_field :address, :placeholder => "Vendor address" %><br>
+  <%= f.label :hours %><br>
+    <%= f.text_field :hours, :placeholder => "Vendor hours" %><br>
+  <%= f.label :phone %><br>
+    <%= f.text_field :phone, :placeholder => "Vendor phone" %><br>
+  <%= f.label :twitter %><br>
+    <%= f.text_field :twitter, :placeholder => "Vendor twitter" %><br>
+  <%= f.label "Add items to vendor menu. If a certain dish is not listed below, you may manually enter it later." %><br>
 
-<form action="/vendors" method="post">
-  <input type="text" name="name" placeholder="Name"><br>
-  <input type="text" name="address" placeholder="Address"><br>
-  <input type="text" name="hours" placeholder="Hours"><br>
-  <input type="text" name="phone" placeholder="Phone"><br>
-  <input type="text" name="twitter" placeholder="twitter"><br>
-<button>Submit</button>
-</form>
+  <% Menuitem.all.each do |menuitem| %>
+    <%= label_tag menuitem.name %>
+    <%= check_box_tag "vendor[menuitem_ids][]", menuitem.id, @vendor.menuitems.include?(menuitem) %><br>
+    <% end %><br>
+  <%= f.submit %>
+<% end %><br>

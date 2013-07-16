@@ -18,7 +18,6 @@ class MenuitemsController < ApplicationController
     redirect_to '/menuitems'
   end
 
-
   def edit
     @menuitem = Menuitem.find(params[:id])
   end
@@ -37,8 +36,7 @@ class MenuitemsController < ApplicationController
   end
 
   def destroy
-    menuitem = Menuitem.find(params[:id])
-    menuitem.destroy
+    Menuitem.find(params[:id]).destroy
     redirect_to('/menuitems')
   end
 end

@@ -3,4 +3,6 @@
 <p>Description: <%= @menuitem.description %></p>
 <p>Available at: <br><% @menuitem.vendors.each do |vendor| %>
   <%= link_to vendor.name, vendor %>
-  <% end %>
+  <% end %><br><br>
+
+<%= link_to "Edit this menuitem", edit_menuitem_path %>

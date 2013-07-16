@@ -15,39 +15,23 @@ class VendorsController < ApplicationController
   end
 
   def create
-    vendor = Vendor.new
-    vendor.name = params[:name]
-    vendor.address = params[:address]
-    vendor.hours = params[:hours]
-    vendor.phone = params[:phone]
-    vendor.twitter = params[:twitter]
+    vendor = Vendor.new(params[:vendor])
     vendor.save
     redirect_to('/vendors')
   end
 
   def edit
     @vendor = Vendor.find(params[:id])
-    name = params[:name]
-    address = params[:address]
-    hours = params[:hours]
-    phone = params[:phone]
-    twitter = params[:twitter]
   end
 
   def update
-    vendor = Vendor.find(params[:id])
-    vendor.name = params[:name]
-    vendor.address = params[:address]
-    vendor.hours = params[:hours]
-    vendor.phone = params[:phone]
-    vendor.twitter = params[:twitter]
-    vendor.save
-    redirect_to "/vendors/#{vendor.id}"
+    @vendor = Vendor.find(params[:id])
+    @vendor.update_attributes(params[:vendor])
+    redirect_to @vendor
   end
 
   def destroy
-    vendor = Vendor.find(params[:id])
-    vendor.destroy
+    Vendor.find(params[:id]).destroy
     redirect_to "/vendors"
   end
 

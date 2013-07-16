@@ -10,21 +10,22 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @vendors = Vendor.all
   end
 
   def create
-    review = Review.new
-    review.text = params[:text]
-    review.rating = params[:rating]
-
-    vendor = Vendor.find(params[:vendor])
-    vendor.reviews << review
-    vendor.save
+    review = Review.new(params[:review])
     review.save
     redirect_to('/reviews')
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
 
+  def update
+    @review = Review.find(params[:id])
+    @review.update_attributes(params[:review])
+    redirect_to @review
+  end
 end
 
