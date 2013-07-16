@@ -1,0 +1,5 @@
+<h1>Menu Items</h1>
+
+<% @menuitems.each do |menuitem| %>
+  <%= link_to menuitem.name, menuitem %>
+  <% end %>

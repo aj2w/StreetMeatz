@@ -11,11 +11,6 @@ class VendorsController < ApplicationController
   end
 
   def new
-    # name = params[:name]
-    # address = params[:address]
-    # hours = params[:hours]
-    # phone = params[:phone]
-    # twitter = params[:twitter]
     @vendor = Vendor.new
   end
 

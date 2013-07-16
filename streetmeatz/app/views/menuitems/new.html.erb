@@ -1,0 +1,14 @@
+<h1>Add a new menuitem</h1>
+
+<form action="/menuitems" method="post">
+  <input type="text" name="name" placeholder="Name"><br><br>
+  <label>Where did you eat this dish?</label>
+
+  <select name="vendor">
+    <% @vendors.each do |vendor| %>
+    <option value="<%= vendor.id %>"><%= vendor.name %></option>
+    <% end %>
+  </select>
+  <button>Add new menu item</button>
+</form>
+
