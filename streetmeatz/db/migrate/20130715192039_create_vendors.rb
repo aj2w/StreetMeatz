@@ -9,6 +9,7 @@ class CreateVendors < ActiveRecord::Migration
       t.string :phone
       t.string :twitter
       t.boolean :gmaps
+      t.belongs_to :user
       t.timestamps
   end
 end

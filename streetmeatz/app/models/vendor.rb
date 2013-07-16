@@ -1,9 +1,10 @@
 class Vendor < ActiveRecord::Base
+  attr_accessible :name, :address, :hours, :phone, :twitter
   has_and_belongs_to_many :menuitems
   has_many :reviews
 
   acts_as_gmappable :check_process => false
-  @markers = User.all.to_gmaps4rails
+  @markers = Vendor.all.to_gmaps4rails
 
   ### For gmaps4rails functionality ###
   def gmaps4rails_address

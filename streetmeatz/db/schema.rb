@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20130716013643) do
   create_table "menuitems", :force => true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "price"
+    t.float    "price"
     t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130716013643) do
     t.string   "phone"
     t.string   "twitter"
     t.boolean  "gmaps"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
