@@ -1,5 +1,5 @@
 class Vendor < ActiveRecord::Base
-# Inserts relational aspects here
+  has_and_belongs_to_many :menuitems
 
   acts_as_gmappable :check_process => false
 
