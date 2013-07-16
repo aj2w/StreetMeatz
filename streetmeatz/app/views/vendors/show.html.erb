@@ -1,15 +1,23 @@
 <h1><%= @vendor.name %></h1>
 
 Location: <%= @vendor.address %><br>
+Average Rating:
 Hours: <%= @vendor.hours %><br>
 Phone: <%= @vendor.phone %><br>
 Twitter: <%= @vendor.twitter %><br><br>
+
+Menu items include:<br>
+<% @vendor.menuitems.each do |food| %>
+<%= link_to food.name, menuitem_path %><br>
+<% end %><br>
+
 Average Rating: PUT SOMETHING HERE
 
 <%= gmaps4rails(@json) %>
 
 <%= link_to "Vendor Home", vendors_path %><br>
 <%= link_to "Edit Vendor Information", edit_vendor_path %><br>
+<%= link_to "Review this vendor", new_review_path %><br>
 
 <form action="/vendors/<%= @vendor.id %>" method="POST">
   <input type="hidden" name="_method" value="delete">
