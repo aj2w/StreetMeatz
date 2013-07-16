@@ -1,16 +1,16 @@
-<h1>Street_Meatz</h1>
+<div class="container">
+<div class="hero-unit">
+<h1>Welcome to Street_Meat.</h1><br>
 
-<body>
-<p>Street_Meatz is your go-to site for finding delicious street food in your area.</p>
-
-<p>Hungry? Find a new street vendor -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
+<p>Hungry? Find a new street vendor in your area -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
 
 <p>Find. Review. It's as simple as that.</p>
 
-<p>put three boxes here: find, review</p>
+<p><a href="/vendors" class="btn btn-primary btn-large">Find &raquo;</a>
+<a href="/reviews" class="btn btn-primary btn-large">Review &raquo;</a></p>
 
-<%= link_to "Find", vendors_path %>
-<%= link_to "Review", reviews_path %>
+</div>
+</div>
 
 <p>Currently showing <%= pluralize(@vendors.count, "vendor") %></p>
 <%= gmaps4rails(@json) %>

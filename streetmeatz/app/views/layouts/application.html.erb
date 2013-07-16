@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
 <head>
   <title>Street_Meatz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= stylesheet_link_tag 'gmaps4rails' %>
-  <%= stylesheet_link_tag 'bootstrap' %>
+  <%= stylesheet_link_tag 'bootstrap', :media => "all" %>
   <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/navbar' %>
+
 
 <%= yield %>
 <%= yield :scripts %>
 <script src="http://code.jquery.com/jquery.js"></script>
 </body>
 <footer>
-  <%= link_to "Home", root_path %>
+  <p>Anuj Jhunjhunwala 2013</p>
 </html>
