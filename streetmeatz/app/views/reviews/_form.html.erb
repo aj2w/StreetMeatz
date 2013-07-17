@@ -1,8 +1,8 @@
 <h1>Review a vendor!</h1>
 
 <%= form_for @review do |f| %>
-  <%= f.collection_select :vendor_id, Vendor.all, :id, :name %><br><br>
-  <%= f.label "What did you like? What didn't you like?" %><br>
+  <%= f.collection_select :vendor_id, Vendor.all, :id, :name %><br>
+  <%= f.label "What did you like? What didn't you like?" %>
     <%= f.text_field :text, :placeholder => "Write your review here" %><br><br>
   <%= f.label "Rating" %><br>
     <%= f.radio_button :rating, "5" %>
