@@ -8,6 +8,10 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.front_page {
+  background-image: url(<%= asset_path 'rails.png' %>)
+}
+
 .clearfix {
   *zoom: 1;
 }

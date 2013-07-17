@@ -1,24 +1,21 @@
+<div class="front_page">
 <div class="container">
 <div class="hero-unit">
-<h1>Welcome to Street_Meat.</h1><br>
+<h1>Welcome to Streetside_Bites</h1><br>
 
-<p>Hungry? Find a new street vendor in your area -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
+<p>Hungry? Find the best street vendors in your area -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
 
 <p>Find. Review. It's as simple as that.</p>
+
+<p>To get started, enter your location.</p>
 
 <%= form_tag vendors_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
+    <%= submit_tag "Go!", :name => nil %>
   </p>
 <% end %>
 
-<p><a href="/vendors" class="btn btn-primary btn-large">Find &raquo;</a>
-<a href="/reviews" class="btn btn-primary btn-large">Review &raquo;</a></p>
-
 </div>
 </div>
-
-<p>Currently showing <%= pluralize(@vendors.count, "vendor") %></p>
-<%= gmaps4rails(@json) %>
-</body>
+</div>
