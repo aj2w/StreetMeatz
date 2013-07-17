@@ -1,0 +1,7 @@
+<% unless @vendor.reviews.empty? %>
+<% review_sum = 0 %>
+<% @vendor.reviews.each do |review| %>
+<% review_sum += review.rating %>
+<% end %>
+<%= review_sum / @vendor.reviews.count %>
+<% end %>

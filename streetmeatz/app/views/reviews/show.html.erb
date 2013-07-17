@@ -1,7 +1,3 @@
-<h1>Review detail</h1>
-
-Vendor reviewed: <%= link_to @review.vendor.name, @review.vendor %><br><br>
-
-Text of review: <%= @review.text %><br><br>
-
-Rating assigned: <%= @review.rating %><br><br>
+<h1>Reviews for <%= @review.vendor.name %></h1>
+<br>
+<em>"<%= @review.text %>"</em> (User rating: <%= @review.rating %>)<br>

@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20130716013643) do
     t.string   "name"
     t.string   "description"
     t.float    "price"
-    t.string   "image"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -49,8 +48,6 @@ ActiveRecord::Schema.define(:version => 20130716013643) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "hours"
-    t.string   "phone"
     t.string   "twitter"
     t.boolean  "gmaps"
     t.integer  "user_id"

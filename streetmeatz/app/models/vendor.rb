@@ -1,7 +1,9 @@
 class Vendor < ActiveRecord::Base
-  attr_accessible :name, :address, :hours, :phone, :twitter, :menuitem_ids
+  attr_accessible :name, :address, :menuitem_ids
   has_and_belongs_to_many :menuitems
   has_many :reviews
+
+  validates :name, :address, presence: true
 
   geocoded_by :address
   # after_validation :geocode, :if => :address_changed?
@@ -17,9 +19,7 @@ class Vendor < ActiveRecord::Base
   def gmaps4rails_infowindow
     "<p>#{name}</p>
     <p>#{address}</p>
-    <p>#{twitter}</p>
-    <p>#{hours}</p>
-    <p>#{phone}</p>"
+    <p>#{twitter}</p>"
   end
 
   def gmaps4rails_title

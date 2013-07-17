@@ -5,8 +5,6 @@ class CreateVendors < ActiveRecord::Migration
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.string :hours
-      t.string :phone
       t.string :twitter
       t.boolean :gmaps
       t.belongs_to :user

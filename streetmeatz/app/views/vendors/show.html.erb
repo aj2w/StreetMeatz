@@ -1,23 +1,21 @@
 <h1><%= @vendor.name %></h1>
 
-Location: <%= @vendor.address %><br>
-Average Rating:
-Hours: <%= @vendor.hours %><br>
-Phone: <%= @vendor.phone %><br>
-Twitter: <%= @vendor.twitter %><br><br>
+<p>Location: <%= @vendor.address %></p>
+<p>Average User Rating: <%= render 'averagerating' %></p>
+<% if @vendor.twitter? %>
+   <p>Twitter: <%= @vendor.twitter %> </p>
+  <% end %>
 
-Menu items include:<br>
-<% @vendor.menuitems.each do |food| %>
-<%= link_to food.name, menuitem_path %><br>
-<% end %><br>
+<p>Menu items include:</p> <%= render 'menu' %><br>
 
-Average Rating: PUT SOMETHING HERE
+<p>First three user reviews: (<%= link_to "View All", review_path %>)</p>
+<%= render 'review' %><br>
 
 <%= gmaps4rails(@json) %>
 
-<%= link_to "Vendor Home", vendors_path %><br>
+<%= link_to "Review Vendor", new_review_path %><br>
 <%= link_to "Edit Vendor Information", edit_vendor_path %><br>
-<%= link_to "Review this vendor", new_review_path %><br>
+
 
 <form action="/vendors/<%= @vendor.id %>" method="POST">
   <input type="hidden" name="_method" value="delete">

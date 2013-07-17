@@ -1,0 +1,3 @@
+<% @vendor.reviews[0..2].each do |review| %>
+<em>"<%= review.text %>"</em> (User rating: <%= review.rating %>)<br>
+<% end %>

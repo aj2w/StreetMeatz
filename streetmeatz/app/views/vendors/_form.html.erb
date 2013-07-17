@@ -1,0 +1,15 @@
+<%= form_for @vendor do |f| %>
+  <%= f.label :name %><br>
+    <%= f.text_field :name, :placeholder => "Vendor name" %><br>
+  <%= f.label :address %><br>
+    <%= f.text_field :address, :placeholder => "Vendor address" %><br>
+  <%= f.label :twitter %><br>
+    <%= f.text_field :twitter, :placeholder => "Vendor twitter" %><br>
+  <%= f.label "Add items to vendor menu. If a certain dish is not listed below, you may manually enter it later." %><br>
+
+  <% Menuitem.all.each do |menuitem| %>
+    <%= label_tag menuitem.name %>
+    <%= check_box_tag "vendor[menuitem_ids][]", menuitem.id, @vendor.menuitems.include?(menuitem) %><br>
+    <% end %><br>
+  <%= f.submit %>
+<% end %><br>
