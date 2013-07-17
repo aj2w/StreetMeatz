@@ -1,7 +1,8 @@
 <h1><%= @vendor.name %></h1>
 
 <p>Location: <%= @vendor.address %></p>
-<p>Average User Rating: <%= render 'averagerating' %></p>
+<p>Average User Rating: <%= render 'averagerating' %>/ 5</p>
+<p>Average Price: $<%= render 'averageprice' %></p>
 <% if @vendor.twitter? %>
    <p>Twitter: <%= @vendor.twitter %> </p>
   <% end %>
