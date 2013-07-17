@@ -11,7 +11,7 @@ Vendor.delete_all
 Menuitem.delete_all
 Review.delete_all
 
-u1 = User.create(name: "Anuj", password: "jhunjhunwala", is_admin: true)
+# u1 = User.create(name: "Anuj", password: "jhunjhunwala", is_admin: true)
 
 v1 = Vendor.create(name: "Amir's Falafel", address: "23rd and 6th avenue, New York, NY")
 v2 = Vendor.create(name: "Joe's Fruit Cart", address: "23rd and Broadway, New York, NY")
@@ -27,7 +27,7 @@ r2 = Review.create(text: "Chicken and rice wasn't that good", rating: "2")
 r3 = Review.create(text: "Hot dog was excellent", rating: "5")
 r4 = Review.create(text: "Chicken tasted weird", rating:"1")
 
-u1.vendors = [v1, v2, v3]
+# u1.vendors = [v1, v2, v3]
 
 v1.menuitems = [m2, m3]
 v2.menuitems = [m4]

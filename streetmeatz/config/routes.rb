@@ -4,4 +4,6 @@ Streetmeatz::Application.routes.draw do
   resources :vendors
   resources :menuitems
   resources :reviews
+  resources :users
+  resources :sessions
 end
