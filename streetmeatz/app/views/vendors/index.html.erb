@@ -1,12 +1,19 @@
+<div class="textbox">
 <h2>Vendors <% if params[:search] %>
   Near <%= params[:search] %>
   <% end %>
 </h2>
 
+<ul>
 <% @vendors.each do |vendor| %>
-<%= link_to(vendor.name,vendor) %><br>
+<li><%= link_to(vendor.name,vendor) %><br></li>
 <% end %>
+<br>
+</ul>
+<%= link_to "Add a new vendor", new_vendor_path, :class => "btn btn-primary" %>
+</div>
+
 
 <%= gmaps4rails(@json) %>
 
-<%= link_to "Add a new vendor", new_vendor_path %>
+

@@ -14,11 +14,6 @@
 
 <%= gmaps4rails(@json) %>
 
-<%= link_to "Review Vendor", new_review_path %><br>
-<%= link_to "Edit Vendor Information", edit_vendor_path %><br>
-
-
-<form action="/vendors/<%= @vendor.id %>" method="POST">
-  <input type="hidden" name="_method" value="delete">
-  <button>Delete Vendor</button>
-</form>
+<%= link_to "Review Vendor", new_review_path, :class => "btn btn-primary" %>
+<%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %><br>
+<%= button_to "Destroy Vendor", @vendor, :method => :delete, :class => "btn btn-danger" %>

@@ -1,0 +1,52 @@
+.textbox {
+  background-color: #eeeeee;
+  position: float;
+  width: 400px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.image_container {
+    /*display: block;*/
+    width: auto;
+   /* position: absolute;
+    top: 0;
+    left: 0;*/
+    background: url(http://farm3.staticflickr.com/2308/2350431985_112db275bd_o.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 1000px;
+ /*   opacity: 0.3;*/
+}
+
+.landing {
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+}
+
+.text_area {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: white;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.text_area h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: inherit;
+}
+
+.text_area li {
+  line-height: 30px;
+}

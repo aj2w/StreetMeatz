@@ -8,10 +8,6 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-.front_page {
-  background-image: url(<%= asset_path 'rails.png' %>)
-}
-
 .clearfix {
   *zoom: 1;
 }
@@ -232,6 +228,7 @@ body {
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
+  padding-top: 35px;
 }
 
 a {
@@ -657,7 +654,7 @@ p {
 }
 
 .lead {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   font-size: 21px;
   font-weight: 200;
   line-height: 30px;
@@ -3951,7 +3948,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .nav {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   margin-left: 0;
   list-style: none;
 }
@@ -4369,7 +4366,7 @@ input[type="submit"].btn.btn-mini {
 .navbar {
   *position: relative;
   *z-index: 2;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   overflow: visible;
 }
 
@@ -6128,7 +6125,6 @@ a.badge:focus {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
-  background-image: url('../images/thai.jpg');
   /*background-color: #eeeeee;*/
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;

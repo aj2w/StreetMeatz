@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :current_user ## WHAT DOES THIS DO
   helper_method :current_user
 
   private
