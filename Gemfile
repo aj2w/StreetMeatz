@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,6 +16,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'pry-rails'           # Causes rails console to open pry
                             # https://github.com/rweng/pry-rails
   gem 'pry-debugger'        # Adds step, next, finish, and continue commands and breakpoints

@@ -48887,3 +48887,53 @@ Processing by MenuitemsController#show as HTML
   Rendered layouts/_navbar.html.erb (0.8ms)
   Rendered layouts/_notifications.html.erb (0.1ms)
 Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/menuitems/15" for 127.0.0.1 at 2013-07-18 18:23:33 -0400
+Processing by MenuitemsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (5.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mMenuitem Load (0.2ms)[0m  SELECT "menuitems".* FROM "menuitems" WHERE "menuitems"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36mVendor Load (0.1ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mVendor Load (0.1ms)[0m  SELECT "vendors".* FROM "vendors" INNER JOIN "menuitems_vendors" ON "vendors"."id" = "menuitems_vendors"."vendor_id" WHERE "menuitems_vendors"."menuitem_id" = 15
+  Rendered menuitems/show.html.erb within layouts/application (124.1ms)
+Compiled bootstrap.css  (0ms)  (pid 65392)
+Compiled bootstrap-responsive.css  (0ms)  (pid 65392)
+Compiled style.css  (0ms)  (pid 65392)
+Compiled gmaps4rails.css  (0ms)  (pid 65392)
+Compiled application.css  (222ms)  (pid 65392)
+Compiled jquery.js  (2ms)  (pid 65392)
+Compiled jquery_ujs.js  (0ms)  (pid 65392)
+Compiled bootstrap.js  (0ms)  (pid 65392)
+Compiled gmaps4rails/gmaps4rails.base.js  (1091ms)  (pid 65392)
+Compiled gmaps4rails/gmaps4rails.bing.js  (306ms)  (pid 65392)
+Compiled gmaps4rails/gmaps4rails.googlemaps.js  (736ms)  (pid 65392)
+Compiled gmaps4rails/gmaps4rails.mapquest.js  (338ms)  (pid 65392)
+Compiled gmaps4rails/gmaps4rails.openlayers.js  (583ms)  (pid 65392)
+Compiled application.js  (3531ms)  (pid 65392)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 4276ms (Views: 4185.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-07-18 18:23:41 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.3ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 58.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2013-07-18 18:23:44 -0400
+Processing by VendorsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mVendor Load (0.3ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (2.4ms)
+  Rendered vendors/index.html.erb within layouts/application (19.6ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 101ms (Views: 93.7ms | ActiveRecord: 0.4ms)
