@@ -1,17 +1,20 @@
-Vendor (name, address, latitude, longitude, hours, phone, twitter, gmaps boolean)
-has_and_belongs_to_many menuitems
-has_many reviews
+##Vendor (name, address, latitude, longitude, hours, phone, twitter, gmaps boolean)
+##has_and_belongs_to_many menuitems
+##has_many reviews
 
 
-MenuItem (name, description (maybe) )
-has_and_belongs_to_many vendors
+##MenuItem (name, description (maybe), price, picture )
+##has_and_belongs_to_many vendors
 
 
 
-Review (review_positive, review_negative, rating 1-5)
-belongs_to vendor
+## Review (review_positive, review_negative, rating 1-5)
+##belongs_to vendor
+##belongs_to user
 
 
-User ()
+##User (name, password, is_admin (boolean))
+##has_many reviews
+
 
 
