@@ -3,5 +3,6 @@
 <% @vendor.menuitems.each do |menuitem| %>
 <% price_sum += menuitem.price %>
 <% end %>
-<%= price_sum / @vendor.menuitems.count %>
+<% average = price_sum / @vendor.menuitems.count %>
+<%= average.round(2) %>
 <% end %>

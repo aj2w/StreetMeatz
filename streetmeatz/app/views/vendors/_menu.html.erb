@@ -1,3 +1,4 @@
 <% @vendor.menuitems.each do |food| %>
 <%= link_to food.name, menuitem_path %><br>
 <% end %>
+<em><%= link_to "Add menu item", :controller => :menuitems, :action => :new %></em>
