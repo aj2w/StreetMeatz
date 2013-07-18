@@ -1,38 +1,35 @@
 <h1><%= @vendor.name %></h1>
 
 <table class="table">
-<tr>
-  <td><strong>Location: </strong></td>
-    <td><%= @vendor.address %></td>
-</tr>
-
-<tr>
-  <td><strong>Average Rating: </strong></td>
-    <td><%= render 'averagerating' %>/ 5</td>
-</tr>
-
-<tr>
-  <td><strong>Average Price: </strong></td>
-    <td>$<%= render 'averageprice' %></td>
-</tr>
-
-<% if @vendor.twitter? %>
-<tr>
-   <td><strong>Twitter: </strong></td>
-    <td><%= @vendor.twitter %> </td>
-</tr>
+  <tr>
+    <td><strong>Location: </strong></td>
+      <td><%= @vendor.address %></td>
+  </tr>
+  <tr>
+    <td><strong>Average Rating: </strong></td>
+      <td><%= render 'averagerating' %>/ 5</td>
+  </tr>
+  <tr>
+    <td><strong>Average Price: </strong></td>
+      <td>$<%= render 'averageprice' %></td>
+  </tr>
+  <% if @vendor.twitter? %>
+  <tr>
+     <td><strong>Twitter: </strong></td>
+      <td><%= @vendor.twitter %> </td>
+  </tr>
   <% end %>
-
-<tr>
-  <td><strong>Menu items include:</strong></td>
-  <td><%= render 'menu' %><br></td>
-</tr>
-
-<tr>
-  <td><strong>Selection of user reviews: (<%= link_to "View All", review_path %>)</strong></td>
-  <td><%= render 'review' %></td>
-</tr>
-
+  <tr>
+    <td><strong>Menu items include:</strong></td>
+    <td><%= render 'menu' %></td>
+  </tr>
+  <tr>
+  </table>
+  <table class="table">
+  <tr>
+    <td><strong>Selection of user reviews: </strong><br>
+    <%= render 'review' %></td>
+  </tr>
 </table>
 <%= gmaps(:markers => { :data => @json }, :map_options => { :auto_adjust => true, :auto_zoom => false, :zoom => 16 }) %>
 
