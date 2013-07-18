@@ -1,3 +1,5 @@
+
+
 /*For the textbox on the vendor show page*/
 .textbox {
   background-color: #eeeeee;
@@ -11,7 +13,7 @@
 
 /*For the table on the vendor show page*/
 table {
-  max-width: 25%;
+  max-width: 100%;
 }
 
 /*For the welcome index page*/

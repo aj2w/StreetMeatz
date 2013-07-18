@@ -1,42 +1,51 @@
-<h1><%= @vendor.name %></h1>
+<div class="row">
+  <div class="span4">
+    <div class="textbox">
+    <h1><%= @vendor.name %></h1>
 
-<table class="table">
-  <tr>
+    <table class="table">
+    <tr>
     <td><strong>Location: </strong></td>
-      <td><%= @vendor.address %></td>
-  </tr>
-  <tr>
+    <td><%= @vendor.address %></td>
+    </tr>
+    <tr>
     <td><strong>Average Rating: </strong></td>
-      <td><%= render 'averagerating' %>/ 5</td>
-  </tr>
-  <tr>
+    <td><%= render 'averagerating' %>/ 5</td>
+    </tr>
+    <tr>
     <td><strong>Average Price: </strong></td>
-      <td>$<%= render 'averageprice' %></td>
-  </tr>
-  <% if @vendor.twitter? %>
-  <tr>
-     <td><strong>Twitter: </strong></td>
-      <td><%= @vendor.twitter %> </td>
-  </tr>
-  <% end %>
-  <tr>
+    <td>$<%= render 'averageprice' %></td>
+    </tr>
+    <% if @vendor.twitter? %>
+    <tr>
+    <td><strong>Twitter: </strong></td>
+    <td><%= @vendor.twitter %> </td>
+    </tr>
+    <% end %>
+    <tr>
     <td><strong>Menu items include:</strong></td>
     <td><%= render 'menu' %></td>
-  </tr>
-  <tr>
-  </table>
-  <table class="table">
-  <tr>
+    </tr>
+    <tr>
+    </table>
+    <table class="table">
+    <tr>
     <td><strong>Selection of user reviews: </strong><br>
     <%= render 'review' %></td>
-  </tr>
-</table>
-<%= gmaps(:markers => { :data => @json }, :map_options => { :auto_adjust => true, :auto_zoom => false, :zoom => 16 }) %>
+    </tr>
+    </table>
 
-<%= link_to "Review Vendor", new_review_path, :class => "btn btn-primary" %>
-<%= link_to " Back", :back, :class => "btn btn-primary" %>
+    <%= link_to "Review Vendor", new_review_path, :class => "btn btn-primary" %>
+    <%= link_to " Back", :back, :class => "btn btn-primary" %>
 
-<% if @current_user && @current_user.is_admin %>
-  <%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %>
-  <%= button_to "Destroy Vendor", @vendor, :method => :delete, :class => "btn btn-danger" %>
-  <% end %>
+    <% if @current_user && @current_user.is_admin %>
+      <%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %>
+        <%= button_to "Destroy Vendor", @vendor, :method => :delete, :class => "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="span8">
+  <%= gmaps(:markers => { :data => @json }, :map_options => { :auto_adjust => true, :auto_zoom => false, :zoom => 16 }) %>
+  </div>
+</div>
