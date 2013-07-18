@@ -1,5 +1,9 @@
-<h1>Aggregated Reviews (not for public viewing)</h1>
+<%= render 'layouts/adminpage' %>
 
-<% @reviews.each do |review| %>
-<p><%= link_to review.text, review %></p>
+<% if @current_user && @current_user.is_admin %>
+    <h1>Aggregated Reviews (not for public viewing)</h1>
+
+    <% @reviews.each do |review| %>
+      <p><%= link_to review.text, review %></p>
+  <% end %>
 <% end %>

@@ -34,6 +34,9 @@
 <%= gmaps(:markers => { :data => @json }, :map_options => { :auto_adjust => true, :auto_zoom => false, :zoom => 16 }) %>
 
 <%= link_to "Review Vendor", new_review_path, :class => "btn btn-primary" %>
-<%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %><br>
 <%= link_to " Back", :back, :class => "btn btn-primary" %>
-<%= button_to "Destroy Vendor", @vendor, :method => :delete, :class => "btn btn-danger" %>
+
+<% if @current_user && @current_user.is_admin %>
+  <%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %>
+  <%= button_to "Destroy Vendor", @vendor, :method => :delete, :class => "btn btn-danger" %>
+  <% end %>

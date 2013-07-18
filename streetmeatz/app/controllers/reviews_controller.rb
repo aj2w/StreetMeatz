@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
 
   def index
-    #redirect_to request.referrer
     @reviews = Review.all
   end
 
@@ -23,14 +22,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+##CONSIDER DELETING THE BELOW ####
   def edit
     @review = Review.find(params[:id])
   end
 
   def update
+    if @current_user && @current_user.is_admin
     @review = Review.find(params[:id])
     @review.update_attributes(params[:review])
     redirect_to @review
+      else
+      redirect_to('/')
   end
 end
-
+end

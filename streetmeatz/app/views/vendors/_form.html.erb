@@ -1,3 +1,7 @@
+<%= render '/layouts/authenticate' %>
+
+<% if @current_user %>
+
 <div class="row-fluid">
   <div class="span10 offset1">
 <h1>Add Vendor</h1>
@@ -18,3 +22,5 @@
  <%= f.submit :class => "btn btn-primary" -%>
 <% end %><br>
 </div></div>
+
+<% end %>

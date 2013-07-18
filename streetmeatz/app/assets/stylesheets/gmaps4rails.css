@@ -15,10 +15,10 @@
 
 .gmaps4rails_map {
   position: absolute;
-  top:45px;
-  right:1px;
-  width: 900px;
-  height: 400px;
+/*  top:45px;
+  right:1px;*/
+  width: 100%;
+  height: 100%;
 }
 /*
 .bing_map {

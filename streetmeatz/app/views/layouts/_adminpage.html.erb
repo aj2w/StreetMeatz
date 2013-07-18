@@ -1,0 +1,5 @@
+<% unless @current_user && @current_user.is_admin %>
+<div class="error">
+  <p>You must be an admin to view this page</p>
+</div>
+  <% end %>

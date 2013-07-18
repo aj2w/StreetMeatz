@@ -1,6 +1,9 @@
+<%= render '/layouts/authenticate' %>
+
+<% if @current_user %>
 <div class="row-fluid">
   <div class="span10 offset1">
-    <h1>Review a Vendor</h1>
+    <h1>Vendor Review</h1>
 
     <%= form_for @review do |f| %>
       <%= f.label "Which vendor?" %>
@@ -12,5 +15,6 @@
     <%= f.submit "Submit", :class => "btn btn-primary" -%>
     <%= link_to " Cancel", :back, :class => "btn btn-primary" %>
     <% end %>
-</div>
+  <% end %>
+  </div>
 </div>

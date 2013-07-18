@@ -8,7 +8,7 @@ class Vendor < ActiveRecord::Base
   geocoded_by :address
   # after_validation :geocode, :if => :address_changed?
 
-### For gmaps4rails functionality ###
+  ### For gmaps4rails functionality ###
   acts_as_gmappable :check_process => false
   @markers = Vendor.all.to_gmaps4rails
 
@@ -18,10 +18,6 @@ class Vendor < ActiveRecord::Base
 
   def gmaps4rails_infowindow
     "#{self.name}, #{self.address}"
-  end
-
-  def gmaps4rails_title
-   #INSERT SOMETHING HERE
   end
 
 end

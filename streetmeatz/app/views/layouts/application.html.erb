@@ -4,17 +4,14 @@
   <title>Streetside_Bites</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/notifications' %>
 
-
-
-<%= yield %>
-<%= yield :scripts %>
+  <%= yield %>
+  <%= yield :scripts %>
 <script src="http://code.jquery.com/jquery.js"></script>
 </body>
 </html>
