@@ -10,7 +10,13 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="active"><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Browse", vendors_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "By Vendor", vendors_path %></li>
+              <li><%= link_to "By Food", menuitems_path %></li>
+            </ul>
+          </li>
           <li><%= link_to "Review Vendor", new_review_path %></li>
           <% unless @current_user %>
           <li><%= link_to "Create Account", new_user_path %></li>

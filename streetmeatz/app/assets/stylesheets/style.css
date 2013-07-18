@@ -1,4 +1,7 @@
-
+.nonmap {
+    background: url(thai.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 
 /*For the textbox on the vendor show page*/
 .textbox {
@@ -9,6 +12,19 @@
   margin-left: 5px;
   padding-right: 5px;
   padding-left: 5px;
+}
+
+.textbox.tall {
+  background-color:rgba(30,30,30,0.3);
+  min-height: 700px;
+}
+
+.textbox.tall h1 {
+  color: white;
+}
+
+.textbox.tall a {
+  color: white;
 }
 
 /*For the table on the vendor show page*/

@@ -1,7 +1,12 @@
+<div class="nonmap">
+<div class="row-fluid">
+  <div class="span3 offset1">
+    <div class="textbox tall">
 <h1>Menu Items</h1>
-
+<ul>
 <% @menuitems.each do |menuitem| %>
-  <%= link_to menuitem.name, menuitem %><br>
-  <% end %><br>
-
-<%= link_to "Add New Menu Item", new_menuitem_path %>
+  <li><%= link_to menuitem.name, menuitem %></li>
+  <% end %>
+</ul>
+<%= link_to "Add New Menu Item", new_menuitem_path, :class => 'btn btn-primary' %>
+</div></div></div></div>
