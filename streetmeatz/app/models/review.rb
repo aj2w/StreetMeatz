@@ -5,4 +5,5 @@ class Review < ActiveRecord::Base
 
   validates :text, :rating, presence: true
   validates :rating, numericality: true
+
 end

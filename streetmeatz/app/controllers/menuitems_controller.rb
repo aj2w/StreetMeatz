@@ -15,7 +15,7 @@ class MenuitemsController < ApplicationController
   def create
     menuitem = Menuitem.new(params[:menuitem])
     menuitem.save
-    redirect_to '/menuitems'
+    redirect_to menuitem.vendors.first
   end
 
   def edit
