@@ -1,12 +1,16 @@
-<h1>Review a vendor!</h1>
+<div class="row-fluid">
+  <div class="span10 offset1">
+    <h1>Review a Vendor</h1>
 
-<%= form_for @review do |f| %>
-  <%= f.label "Which vendor?" %>
-  <%= f.collection_select :vendor_id, Vendor.all, :id, :name %><br>
-  <%= f.label "Comments?" %>
-    <%= f.text_field :text, :placeholder => "Write your review here" %><br>
-  <%= f.label "Rating:" %>
-    <%= f.select :rating, [['5 - Excellent','5'],['4 - Great','4'],['3 - Good','3'],['2 - Bad','2'],['1 - I made a huge mistake','1']] %><br>
-<%= f.submit "Submit", :class => "btn btn-primary" -%>
-<%= link_to " Cancel", :back, :class => "btn btn-primary" %>
-<% end %><br>
+    <%= form_for @review do |f| %>
+      <%= f.label "Which vendor?" %>
+      <%= f.collection_select :vendor_id, Vendor.all, :id, :name %><br>
+      <%= f.label "Comments?" %>
+        <%= f.text_field :text, :placeholder => "Write your review here" %><br>
+      <%= f.label "Rating:" %>
+        <%= f.select :rating, [['5 - Excellent','5'],['4 - Great','4'],['3 - Good','3'],['2 - Bad','2'],['1 - I made a huge mistake','1']] %><br>
+    <%= f.submit "Submit", :class => "btn btn-primary" -%>
+    <%= link_to " Cancel", :back, :class => "btn btn-primary" %>
+    <% end %>
+</div>
+</div>

@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    redirect_to request.referrer
+    #CONSIDER DELETING
   end
 
   def show
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   def create
     review = Review.new(params[:review])
     review.save
-    redirect_to('/reviews')
+    redirect_to('/vendors/:vendor_id')
   end
 
   def edit

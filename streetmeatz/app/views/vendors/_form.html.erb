@@ -1,15 +1,20 @@
+<div class="row-fluid">
+  <div class="span10 offset1">
+<h1>Add Vendor</h1>
+
 <%= form_for @vendor do |f| %>
-  <%= f.label :name %><br>
+  <%= f.label :name %>
     <%= f.text_field :name, :placeholder => "Vendor name" %><br>
-  <%= f.label :address %><br>
+  <%= f.label :address %>
     <%= f.text_field :address, :placeholder => "Vendor address" %><br>
-  <%= f.label :twitter %><br>
+  <%= f.label :twitter %>
     <%= f.text_field :twitter, :placeholder => "Vendor twitter" %><br>
-  <%= f.label "Add items to vendor menu. If a certain dish is not listed below, you may manually enter it later." %><br>
+  <%= f.label "Select available menu items from the list below, or add manually later:" %>
 
   <% Menuitem.all.each do |menuitem| %>
+    <%= check_box_tag "vendor[menuitem_ids][]", menuitem.id, @vendor.menuitems.include?(menuitem), :style => "float:left;" %>
     <%= label_tag menuitem.name %>
-    <%= check_box_tag "vendor[menuitem_ids][]", menuitem.id, @vendor.menuitems.include?(menuitem) %><br>
     <% end %><br>
-  <%= f.submit %>
+ <%= f.submit :class => "btn btn-primary" -%>
 <% end %><br>
+</div></div>

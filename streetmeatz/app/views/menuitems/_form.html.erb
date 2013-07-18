@@ -1,15 +1,21 @@
-<%= form_for @menuitem do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
-  <%= f.label :price %><br>
-  <%= f.text_field :price %><br>
-  <%= f.label "Which of the following vendors serve this dish?" %><br>
+<div class="row-fluid">
+  <div class="span10 offset1">
+    <h1>Add Menu Item</h1>
+    <%= form_for @menuitem do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+      <%= f.label :price %>
+      <%= f.text_field :price %><br>
+      <%= f.label "Which of the following vendors serve this dish?" %>
 
-  <% Vendor.all.each do |vendor| %>
-    <%= label_tag vendor.name %>
-    <%= check_box_tag "menuitem[vendor_ids][]", vendor.id, @menuitem.vendors.include?(vendor) %><br>
-    <% end %><br>
-    <%= f.submit %>
-    <% end %><br>
+      <% Vendor.all.each do |vendor| %>
+        <%= check_box_tag "menuitem[vendor_ids][]", vendor.id, @menuitem.vendors.include?(vendor), :style => "float:left;" %>
+        <%= label_tag vendor.name %>
+
+        <% end %><br>
+      <%= f.submit %>
+      <% end %><br>
+  </div>
+</div>

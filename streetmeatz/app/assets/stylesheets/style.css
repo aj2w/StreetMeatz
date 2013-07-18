@@ -2,7 +2,7 @@
 .textbox {
   background-color: #eeeeee;
   position: float;
-  width: 400px;
+  width: 100%;
   margin-right: 5px;
   margin-left: 5px;
   padding-right: 5px;
@@ -21,7 +21,7 @@ table {
    /* position: absolute;
     top: 0;
     left: 0;*/
-    background: url(http://farm3.staticflickr.com/2308/2350431985_112db275bd_o.jpg) no-repeat center center fixed;
+    background: url(cover2.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 1000px;
  /*   opacity: 0.3;*/
@@ -75,4 +75,11 @@ table {
 .alert,
 .alert h4 {
   color: black;
+}
+
+/*for forms*/
+label {
+  /*display: block;*/
+  margin-left: 10px;
+  margin-bottom: 5px;
 }

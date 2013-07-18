@@ -1,19 +1,23 @@
-<div class="textbox">
-<h2>Vendors <% if params[:search] %>
-  Near <%= params[:search] %>
-  <% end %>
-</h2>
+<div class="row-fluid">
+  <div class="span4">
+    <div class="textbox">
+      <h2>Vendors <% if params[:search] %>
+        Near <%= params[:search] %>
+        <% end %>
+      </h2>
 
-<ul>
-<% @vendors.each do |vendor| %>
-<li><%= link_to(vendor.name,vendor) %><br></li>
-<% end %>
-<br>
-</ul>
-<%= link_to "Add a new vendor", new_vendor_path, :class => "btn btn-primary" %>
+      <ul>
+      <% @vendors.each do |vendor| %>
+      <li><%= link_to(vendor.name,vendor) %><br></li>
+      <% end %>
+      <br>
+      </ul>
+      <%= link_to "Add a new vendor", new_vendor_path, :class => "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="span8">
+    <%= gmaps4rails(@json) %>
+  </div>
 </div>
-
-
-<%= gmaps4rails(@json) %>
 
 

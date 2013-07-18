@@ -1,5 +1,5 @@
 class Vendor < ActiveRecord::Base
-  attr_accessible :name, :address, :menuitem_ids
+  attr_accessible :name, :address, :menuitem_ids, :twitter
   has_and_belongs_to_many :menuitems
   has_many :reviews
 

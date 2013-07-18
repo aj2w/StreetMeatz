@@ -22,13 +22,6 @@ class MenuitemsController < ApplicationController
     @menuitem = Menuitem.find(params[:id])
   end
 
-  # def update
-  #   @student = Student.find(params[:id])
-  #   raise
-  #   @student.update_attributes(params[:student])
-  #   redirect_to @student
-  # end
-
   def update
     @menuitem = Menuitem.find(params[:id])
     @menuitem.update_attributes(params[:menuitem])
