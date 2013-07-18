@@ -13,8 +13,8 @@
 
 <%= form_tag vendors_path, :method => :get do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Go!", :name => nil %>
+    <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
+    <%= submit_tag "Go!", :name => nil, :class => "btn btn-default" %>
   </p>
 <% end %>
 

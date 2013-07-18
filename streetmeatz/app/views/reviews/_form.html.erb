@@ -1,21 +1,12 @@
 <h1>Review a vendor!</h1>
 
 <%= form_for @review do |f| %>
+  <%= f.label "Which vendor?" %>
   <%= f.collection_select :vendor_id, Vendor.all, :id, :name %><br>
-  <%= f.label "What did you like? What didn't you like?" %>
-    <%= f.text_field :text, :placeholder => "Write your review here" %><br><br>
-  <%= f.label "Rating" %><br>
-  <div class="btn-group" data-toggle="buttons-radio">
-    <%= f.radio_button :rating, "5" %>
-    <%= f.label "5 - Excellent" %><br>
-      <%= f.radio_button :rating, "4" %>
-    <%= f.label "4 - Great" %><br>
-      <%= f.radio_button :rating, "3" %>
-    <%= f.label "3 - Good" %><br>
-      <%= f.radio_button :rating, "2" %>
-    <%= f.label "2 - Bad" %><br>
-      <%= f.radio_button :rating, "1" %>
-    <%= f.label "1 - I made a huge mistake" %><br>
-  </div>
+  <%= f.label "Comments?" %>
+    <%= f.text_field :text, :placeholder => "Write your review here" %><br>
+  <%= f.label "Rating:" %>
+    <%= f.select :rating, [['5 - Excellent','5'],['4 - Great','4'],['3 - Good','3'],['2 - Bad','2'],['1 - I made a huge mistake','1']] %><br>
 <%= f.submit "Submit", :class => "btn btn-primary" -%>
+<%= link_to " Cancel", :back, :class => "btn btn-primary" %>
 <% end %><br>
