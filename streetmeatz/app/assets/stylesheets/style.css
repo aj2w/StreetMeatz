@@ -14,20 +14,18 @@
   padding-left: 5px;
 }
 
-.textbox.tall {
+.tallbox {
   background-color:rgba(30,30,30,0.3);
   min-height: 700px;
-}
-
-.textbox.tall h1 {
+  text-shadow: 1px 1px #000000;
   color: white;
 }
 
-.textbox.tall a {
+.tallbox a{
   color: white;
 }
 
-/*For the table on the vendor show page*/
+/*For the tabele on the vendor show page*/
 table {
   max-width: 100%;
 }
@@ -55,6 +53,7 @@ table {
 .text_area {
   padding: 60px;
   margin-bottom: 30px;
+  text-shadow: 1px 1px #000000;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
