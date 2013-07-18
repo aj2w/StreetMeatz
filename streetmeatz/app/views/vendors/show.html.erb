@@ -8,11 +8,12 @@
   <% end %>
 
 <p>Menu items include:</p> <%= render 'menu' %><br>
+<p>Is this menu incomplete? <%= link_to "Add menu item", :controller => :menuitems, :action => :new %></p>
 
 <p>First three user reviews: (<%= link_to "View All", review_path %>)</p>
 <%= render 'review' %><br>
 
-<%= gmaps4rails(@json) %>
+<%= gmaps(:markers => { :data => @json }, :map_options => { :auto_adjust => true, :auto_zoom => false, :zoom => 16 }) %>
 
 <%= link_to "Review Vendor", new_review_path, :class => "btn btn-primary" %>
 <%= link_to "Edit Vendor Information", edit_vendor_path, :class => "btn btn-primary" %><br>

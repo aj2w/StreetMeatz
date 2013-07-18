@@ -17,9 +17,7 @@ class Vendor < ActiveRecord::Base
   end
 
   def gmaps4rails_infowindow
-    "<p>#{name}</p>
-    <p>#{address}</p>
-    <p>#{twitter}</p>"
+    "#{self.name}, #{self.address}"
   end
 
   def gmaps4rails_title

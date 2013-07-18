@@ -5,6 +5,7 @@
   <%= f.label "What did you like? What didn't you like?" %>
     <%= f.text_field :text, :placeholder => "Write your review here" %><br><br>
   <%= f.label "Rating" %><br>
+  <div class="btn-group" data-toggle="buttons-radio">
     <%= f.radio_button :rating, "5" %>
     <%= f.label "5 - Excellent" %><br>
       <%= f.radio_button :rating, "4" %>
@@ -14,6 +15,7 @@
       <%= f.radio_button :rating, "2" %>
     <%= f.label "2 - Bad" %><br>
       <%= f.radio_button :rating, "1" %>
-    <%= f.label "1 - I made a huge mistake" %><br><br>
-<%= f.submit %>
+    <%= f.label "1 - I made a huge mistake" %><br>
+  </div>
+<%= f.submit "Submit", :class => "btn btn-primary" -%>
 <% end %><br>
