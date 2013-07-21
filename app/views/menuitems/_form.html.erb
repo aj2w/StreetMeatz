@@ -1,9 +1,9 @@
 <div class="nonmap">
-<div class="row-fluid">
-  <div class="tallbox">
-  <div class="span8 offset1">
-    <h1>Add Menu Item</h1>
-    <%= form_for @menuitem do |f| %>
+  <div class="row-fluid">
+    <div class="tallbox">
+      <div class="span8 offset1">
+      <h1>Add Menu Item</h1>
+      <%= form_for @menuitem do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %><br>
       <%= f.label :description %>
@@ -14,12 +14,12 @@
 
       <% Vendor.all.each do |vendor| %>
         <%= check_box_tag "menuitem[vendor_ids][]", vendor.id, @menuitem.vendors.include?(vendor), :style => "float:left;" %>
-        <%= label_tag vendor.name %>
+      <%= label_tag vendor.name %>
 
-        <% end %><br>
-      <%= f.submit "Add", :class => "btn btn-primary" -%>
       <% end %><br>
+        <%= f.submit "Add", :class => "btn btn-primary" -%>
+      <% end %><br>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

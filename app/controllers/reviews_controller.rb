@@ -22,7 +22,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-##CONSIDER DELETING THE BELOW ####
   def edit
     @review = Review.find(params[:id])
   end

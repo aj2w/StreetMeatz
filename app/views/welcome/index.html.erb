@@ -1,23 +1,23 @@
 
 <div class="image_container">
-<div class="landing">
-<div class="text_area">
+  <div class="landing">
+    <div class="text_area">
 
-<h1>Welcome to Streetside_Bites</h1><br>
+      <h1>Welcome to Streetside_Bites</h1><br>
 
-<p>Hungry? Find the best street vendors in your area -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
+      <p>Hungry? Find the best street vendors in your area -- or, if you've got one in mind already, tell us more about that vendor so that others may share in the experience.</p>
 
-<p>Find. Review. It's as simple as that.</p>
+      <p>Find. Review. It's as simple as that.</p>
 
-<p>To get started, enter your location. Or, browse by vendor or food via the menu above.</p>
+      <p>To get started, enter your location. Or, browse by vendor or by food via the menu above.</p>
 
-<%= form_tag vendors_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
-    <%= submit_tag "Go!", :name => nil, :class => "btn btn-default" %>
-  </p>
-<% end %>
+      <%= form_tag vendors_path, :method => :get do %>
+      <p>
+        <%= text_field_tag :search, params[:search], :class => "input-medium search-query" %>
+        <%= submit_tag "Go!", :name => nil, :class => "btn btn-default" %>
+      </p>
+      <% end %>
 
-</div>
-</div>
+    </div>
+  </div>
 </div>

@@ -5,6 +5,7 @@ class Vendor < ActiveRecord::Base
 
   validates :name, :address, presence: true
 
+  ### For geocoder ###
   geocoded_by :address
   # after_validation :geocode, :if => :address_changed?
 

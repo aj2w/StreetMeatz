@@ -1,20 +1,21 @@
 <div class="nonmap">
-<div class="row-fluid">
-  <div class="tallbox">
-  <div class="span4 offset1">
-    <h1><%= @menuitem.name %></h1>
-    <p>Description: <%= @menuitem.description %></p>
-    <p>Available at:
-      <ul>
-        <% @menuitem.vendors.each do |vendor| %>
-        <li><%= link_to vendor.name, vendor %></li>
-        <% end %>
-      </ul>
-      <%= link_to "Back", request.referrer, :class => 'btn btn-primary' %>
-    <% if @current_user && @current_user.is_admin %>
-      <%= link_to "Edit this menuitem", edit_menuitem_path, :class => 'btn btn-primary' %>
-      <%= button_to "Destroy Menu Item", @menuitem, :method => :delete, :class => "btn btn-danger" %>
-  <% end %>
-</div>
-</div>
-</div></div>
+  <div class="row-fluid">
+    <div class="tallbox">
+      <div class="span4 offset1">
+        <h1><%= @menuitem.name %></h1>
+        <p>Description: <%= @menuitem.description %></p>
+        <p>Available at:
+          <ul>
+            <% @menuitem.vendors.each do |vendor| %>
+            <li><%= link_to vendor.name, vendor %></li>
+            <% end %>
+          </ul>
+          <%= link_to "Back", request.referrer, :class => 'btn btn-primary' %>
+          <% if @current_user && @current_user.is_admin %>
+          <%= link_to "Edit this menuitem", edit_menuitem_path, :class => 'btn btn-primary' %>
+          <%= button_to "Destroy Menu Item", @menuitem, :method => :delete, :class => "btn btn-danger" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

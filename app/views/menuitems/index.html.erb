@@ -1,12 +1,15 @@
 <div class="nonmap">
-<div class="row-fluid">
-  <div class="tallbox">
-  <div class="span4 offset1">
-<h1>Menu Items</h1>
-<ul>
-<% @menuitems.each do |menuitem| %>
-  <li><%= link_to menuitem.name, menuitem %></li>
-  <% end %>
-</ul>
-<%= link_to "Add New Menu Item", new_menuitem_path, :class => 'btn btn-primary' %>
-</div></div></div></div>
+  <div class="row-fluid">
+    <div class="tallbox">
+      <div class="span4 offset1">
+        <h1>Menu Items</h1>
+        <ul>
+          <% @menuitems.each do |menuitem| %>
+          <li><%= link_to menuitem.name, menuitem %></li>
+          <% end %>
+        </ul>
+        <%= link_to "Add New Menu Item", new_menuitem_path, :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
