@@ -2,6 +2,7 @@ class MenuitemsController < ApplicationController
 
   def index
     @menuitems = Menuitem.all
+    expires_in 3.minutes, public: true
   end
 
   def show

@@ -1,6 +1,22 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery-rails'
+
+gem 'gmaps4rails'
+gem "geocoder", "~> 1.1.8"
+
+gem 'bcrypt-ruby', require: 'bcrypt'
+
+gem 'pg'
+
+gem 'puma'
+gem 'route_downcaser'
+
+gem 'memcachier'
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -8,7 +24,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'sqlite3'
@@ -31,10 +46,3 @@ group :development, :test do
   gem 'rails-erd'
 
 end
-
-gem 'gmaps4rails'
-gem "geocoder", "~> 1.1.8"
-gem 'bcrypt-ruby', require: 'bcrypt'
-gem 'pg'
-gem 'puma'
-# gem 'devise'

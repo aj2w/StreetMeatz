@@ -3,15 +3,18 @@ class VendorsController < ApplicationController
   def index
     if params[:search].present?
       @vendors = Vendor.near(params[:search], 5, :order => :distance)
+      expires_in 3.minutes, public: true
       # NUMBER IS IN MILES
     else
       @vendors = Vendor.all
+      expires_in 3.minutes, public: true
     end
     @json = @vendors.to_gmaps4rails
   end
 
   def show
     @vendor = Vendor.find(params[:id])
+    expires_in 3.minutes, public: true
     @json = Vendor.find(params[:id]).to_gmaps4rails
   end
 
