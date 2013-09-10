@@ -51308,3 +51308,17 @@ ActionController::RoutingError (No route matches [GET] "/img/glyphicons-halfling
 
 
   Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:20:23 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mVendor Load (0.7ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+Compiled style.css  (0ms)  (pid 6888)
+Compiled application.css  (5ms)  (pid 6888)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+  Rendered layouts/_notifications.html.erb (0.6ms)
+Completed 200 OK in 335ms (Views: 195.3ms | ActiveRecord: 3.9ms)

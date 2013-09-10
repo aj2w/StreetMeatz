@@ -17,6 +17,7 @@ gem 'memcachier'
 gem 'rack-cache'
 gem 'dalli'
 gem 'kgio'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
