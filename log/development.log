@@ -50786,3 +50786,525 @@ Connecting to database specified by database.yml
   [1m[36mVendor Load (8.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
   [1m[35m (0.1ms)[0m  select sqlite_version(*)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-23 20:08:43 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mVendor Load (0.7ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (5.4ms)
+Compiled style.css  (0ms)  (pid 83988)
+Compiled application.css  (4ms)  (pid 83988)
+  Rendered layouts/_navbar.html.erb (3.0ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 387ms (Views: 247.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/vendors?utf8=%E2%9C%93&search=new+york" for 127.0.0.1 at 2013-08-23 20:10:10 -0400
+Processing by VendorsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"new york"}
+  [1m[35mVendor Load (0.1ms)[0m  SELECT vendors.*, NULL AS distance, NULL AS bearing FROM "vendors" WHERE (0)
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (1.6ms)
+  Rendered vendors/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 388ms (Views: 47.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2013-08-23 20:10:29 -0400
+Processing by VendorsController#index as HTML
+  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (1.3ms)
+  Rendered vendors/index.html.erb within layouts/application (40.7ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 73ms (Views: 69.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/vendors/4" for 127.0.0.1 at 2013-08-23 20:10:36 -0400
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mVendor Load (0.3ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 4
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."vendor_id" = 4[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 4
+  Rendered vendors/_averagerating.html.erb (82.8ms)
+  [1m[36mMenuitem Load (1.2ms)[0m  [1mSELECT "menuitems".* FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 4[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 4
+  Rendered vendors/_averageprice.html.erb (42.2ms)
+  Rendered vendors/_menu.html.erb (1.5ms)
+  Rendered vendors/_review.html.erb (0.9ms)
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (0.7ms)
+  Rendered vendors/show.html.erb within layouts/application (137.4ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 198ms (Views: 190.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/menuitems/6" for 127.0.0.1 at 2013-08-23 20:10:43 -0400
+Processing by MenuitemsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMenuitem Load (0.3ms)[0m  [1mSELECT "menuitems".* FROM "menuitems" WHERE "menuitems"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" INNER JOIN "menuitems_vendors" ON "vendors"."id" = "menuitems_vendors"."vendor_id" WHERE "menuitems_vendors"."menuitem_id" = 6
+  Rendered menuitems/show.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vendors/11" for 127.0.0.1 at 2013-08-23 20:10:47 -0400
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mVendor Load (0.1ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1[0m  [["id", "11"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1  [["id", "11"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 11[0m
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."vendor_id" = 11
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 11[0m
+  Rendered vendors/_averagerating.html.erb (2.9ms)
+  [1m[35mMenuitem Load (0.3ms)[0m  SELECT "menuitems".* FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 11
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 11[0m
+  Rendered vendors/_averageprice.html.erb (35.0ms)
+  Rendered vendors/_menu.html.erb (0.6ms)
+  Rendered vendors/_review.html.erb (0.1ms)
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (0.6ms)
+  Rendered vendors/show.html.erb within layouts/application (43.9ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/menuitems/7" for 127.0.0.1 at 2013-08-23 20:10:50 -0400
+Processing by MenuitemsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMenuitem Load (0.1ms)[0m  SELECT "menuitems".* FROM "menuitems" WHERE "menuitems"."id" = ? LIMIT 1  [["id", "7"]]
+  [1m[36mVendor Load (0.3ms)[0m  [1mSELECT "vendors".* FROM "vendors" INNER JOIN "menuitems_vendors" ON "vendors"."id" = "menuitems_vendors"."vendor_id" WHERE "menuitems_vendors"."menuitem_id" = 7[0m
+  Rendered menuitems/show.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vendors/10" for 127.0.0.1 at 2013-08-23 20:10:52 -0400
+Processing by VendorsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mVendor Load (0.1ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 10
+  [1m[36mReview Load (0.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."vendor_id" = 10[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."vendor_id" = 10
+  Rendered vendors/_averagerating.html.erb (3.4ms)
+  [1m[36mMenuitem Load (0.2ms)[0m  [1mSELECT "menuitems".* FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 10[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "menuitems" INNER JOIN "menuitems_vendors" ON "menuitems"."id" = "menuitems_vendors"."menuitem_id" WHERE "menuitems_vendors"."vendor_id" = 10
+  Rendered vendors/_averageprice.html.erb (2.1ms)
+  Rendered vendors/_menu.html.erb (0.5ms)
+  Rendered vendors/_review.html.erb (0.2ms)
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (0.7ms)
+  Rendered vendors/show.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-08-23 20:10:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 161ms (Views: 37.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-08-23 20:11:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@example.com", "password"=>"[FILTERED]"}
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1
+Redirected to http://localhost:3000/sessions
+Completed 302 Found in 95ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/sessions" for 127.0.0.1 at 2013-08-23 20:11:08 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for SessionsController:
+  actionpack (3.2.13) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.13) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.13) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.13) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/routing/route_set.rb:612:in `call'
+  meta_request (0.2.7) lib/meta_request/middlewares/app_request_handler.rb:13:in `call'
+  rack-contrib (1.1.0) lib/rack/contrib/response_headers.rb:17:in `call'
+  meta_request (0.2.7) lib/meta_request/middlewares/headers.rb:16:in `call'
+  meta_request (0.2.7) lib/meta_request/middlewares/meta_request_handler.rb:13:in `call'
+  route_downcaser (0.2.0) lib/route_downcaser/downcase_route_middleware.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.13) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `_run__1794991485221286765__call__517263585191996847__callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.13) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (0.9.0) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/70340338533680/variables" for 127.0.0.1 at 2013-08-23 20:11:08 -0400
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 15:57:52 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (6.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.7ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  Rendered welcome/index.html.erb within layouts/application (5.4ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (5ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 382ms (Views: 252.1ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 15:58:11 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (3ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 66.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 16:07:00 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (3ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 71.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 16:09:13 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (3ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 133ms (Views: 125.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 16:09:21 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (3ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 139ms (Views: 132.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-24 16:11:06 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.3ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Compiled style.css  (0ms)  (pid 87630)
+Compiled application.css  (3ms)  (pid 87630)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 121.1ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-28 21:04:38 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (207.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mVendor Load (0.6ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  Rendered welcome/index.html.erb within layouts/application (7.0ms)
+Compiled style.css  (0ms)  (pid 17720)
+Compiled application.css  (4ms)  (pid 17720)
+  Rendered layouts/_navbar.html.erb (3.4ms)
+  Rendered layouts/_notifications.html.erb (0.9ms)
+Completed 200 OK in 641ms (Views: 270.5ms | ActiveRecord: 211.3ms)
+
+
+Started GET "/log_out" for 127.0.0.1 at 2013-08-28 21:04:43 -0400
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:02:46 -0400
+Processing by WelcomeController#index as HTML
+  [1m[36mVendor Load (0.7ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (10.2ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (4ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (3.1ms)
+  Rendered layouts/_notifications.html.erb (1.3ms)
+Completed 200 OK in 464ms (Views: 307.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:05:37 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 75ms (Views: 70.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/img/glyphicons-halflings.png" for 127.0.0.1 at 2013-09-09 20:05:41 -0400
+
+ActionController::RoutingError (No route matches [GET] "/img/glyphicons-halflings.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:05:55 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 76ms (Views: 70.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:06:12 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 112ms (Views: 106.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:07:18 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 140ms (Views: 134.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/vendors" for 127.0.0.1 at 2013-09-09 20:08:30 -0400
+Processing by VendorsController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (1.6ms)
+  Rendered vendors/index.html.erb within layouts/application (15.6ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 145.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/menuitems" for 127.0.0.1 at 2013-09-09 20:08:33 -0400
+Processing by MenuitemsController#index as HTML
+  [1m[36mMenuitem Load (0.3ms)[0m  [1mSELECT "menuitems".* FROM "menuitems" [0m
+  Rendered menuitems/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 83.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/img/glyphicons-halflings.png" for 127.0.0.1 at 2013-09-09 20:08:40 -0400
+
+ActionController::RoutingError (No route matches [GET] "/img/glyphicons-halflings.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2013-09-09 20:08:47 -0400
+Processing by ReviewsController#new as HTML
+  Rendered layouts/_authenticate.html.erb (0.3ms)
+  Rendered reviews/_form.html.erb (2.0ms)
+  Rendered reviews/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:09:57 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-09-09 20:11:50 -0400
+Processing by WelcomeController#index as HTML
+  [1m[35mVendor Load (0.4ms)[0m  SELECT "vendors".* FROM "vendors" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" [0m
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Compiled style.css  (0ms)  (pid 6372)
+Compiled application.css  (3ms)  (pid 6372)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_notifications.html.erb (0.1ms)
+Completed 200 OK in 132ms (Views: 125.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/menuitems" for 127.0.0.1 at 2013-09-09 20:12:04 -0400
+Processing by MenuitemsController#index as HTML
+  [1m[35mMenuitem Load (0.3ms)[0m  SELECT "menuitems".* FROM "menuitems" 
+  Rendered menuitems/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered layouts/_notifications.html.erb (0.0ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/img/glyphicons-halflings.png" for 127.0.0.1 at 2013-09-09 20:12:07 -0400
+
+ActionController::RoutingError (No route matches [GET] "/img/glyphicons-halflings.png"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.2) lib/quiet_assets.rb:18:in `call_with_quiet_assets'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/aj2w/.rvm/rubies/ruby-1.9.3-p429/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/aj2w/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
