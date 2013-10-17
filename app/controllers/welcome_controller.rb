@@ -30,4 +30,7 @@ class WelcomeController < ApplicationController
     expires_in 3.minutes, public: true
   end
 
+  # def 'loaderio-c9d91e2389bbf26b236fb3a42be92364'
+  # end
+
 end

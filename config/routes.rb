@@ -7,4 +7,5 @@ Streetmeatz::Application.routes.draw do
   resources :users
   get "log_out" => "sessions#destroy", as: "log_out"
   resources :sessions
+  get "/loaderio-c9d91e2389bbf26b236fb3a42be92364" => "welcome#loaderio-c9d91e2389bbf26b236fb3a42be92364"
 end
