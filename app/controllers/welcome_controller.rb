@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
-
   def index
+    require 'statsd'
     statsd = Statsd.new
     statsd.increment('web.page_views')
     @json = Vendor.all.to_gmaps4rails
