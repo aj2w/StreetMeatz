@@ -18,8 +18,8 @@ gem 'rack-cache'
 gem 'dalli'
 gem 'kgio'
 gem 'newrelic_rpm'
+gem 'dogapi'
 gem 'dogstatsd-ruby'
-# gem 'statsd'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

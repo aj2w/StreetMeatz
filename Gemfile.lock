@@ -57,6 +57,8 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
+    dogapi (1.9.0)
+      json (>= 1.5.1)
     dogstatsd-ruby (1.2.0)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -167,6 +169,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   dalli
+  dogapi
   dogstatsd-ruby
   geocoder (~> 1.1.8)
   gmaps4rails
