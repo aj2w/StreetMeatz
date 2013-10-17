@@ -19,6 +19,7 @@ gem 'dalli'
 gem 'kgio'
 gem 'newrelic_rpm'
 gem 'dogapi'
+gem 'statsd'
 gem 'dogstatsd-ruby'
 
 group :assets do
