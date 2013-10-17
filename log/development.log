@@ -52618,3 +52618,4 @@ Completed 200 OK in 1326108ms (Views: 46.8ms | ActiveRecord: 1.3ms)
 Started GET "/" for 127.0.0.1 at 2013-10-17 19:09:00 -0400
 Processing by WelcomeController#index as HTML
 Completed   in 6275ms
+Connecting to database specified by database.yml

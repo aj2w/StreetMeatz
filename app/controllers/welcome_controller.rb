@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
 
     # dog.increment('web.page_views')
     dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
-    binding.pry
+
 
     @json = Vendor.all.to_gmaps4rails
     @vendors = Vendor.all
