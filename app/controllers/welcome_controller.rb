@@ -8,30 +8,15 @@ class WelcomeController < ApplicationController
 
     statsd.increment('web.page_views')
     dog = Dogapi::Client.new(api_key, application_key)
+    # dog = Dogapi::Client.new(api_key)
+
     # dog.increment('web.page_views')
     dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
-
-    title = 'Streetside Metrics'
-    description = 'Metrics for streetsidebites.herokuapp.com'
-    graphs =  [{
-      "definition" => {
-        "events" => [],
-        "requests "=> [
-          {"q" => "avg:system.mem.free{*}"}
-          ],
-          "viz" => "timeseries"
-          },
-          "title" => "Average Memory Free"
-          }]
-
-          dog.create_dashboard(title, description, graphs)
+    binding.pry
 
     @json = Vendor.all.to_gmaps4rails
     @vendors = Vendor.all
     expires_in 3.minutes, public: true
   end
-
-  # def loaderio-c9d91e2389bbf26b236fb3a42be92364
-  # end
 
 end
