@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     application_key = '0f8be24f18a7cf29198283a236f93561b89be73e'
 
     dog = Dogapi::Client.new(api_key, application_key)
-    dog.emit_point('web.page_views', 50.0, :host => "streetsidebites.herokuapp.com")
+    dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
 
     title = 'Streetside Metrics'
     description = 'Metrics for streetsidebites.herokuapp.com'
