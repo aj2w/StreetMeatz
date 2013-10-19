@@ -12,7 +12,7 @@ def index
     dog = Dogapi::Client.new(api_key, application_key)
 
     points = [[Time.now, 0], [Time.now + 10, 10.0], [Time.now + 20, 20.0]]
-    dog.emit_points('web.page_views', points, tags => ["version:1"])
+    dog.emit_points('web.page_views', points)
     # dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
 
 
