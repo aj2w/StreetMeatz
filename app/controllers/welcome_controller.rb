@@ -9,8 +9,8 @@ def index
     require 'statsd'
     statsd = Statsd.new
     statsd.increment('web.page_views')
-    # dog = Dogapi::Client.new(api_key, application_key)
-    # dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
+    dog = Dogapi::Client.new(api_key, application_key)
+    dog.emit_point('web.page_views', 1.0, :host => "streetsidebites.herokuapp.com")
 
 
     @json = Vendor.all.to_gmaps4rails
